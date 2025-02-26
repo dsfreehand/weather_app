@@ -1,6 +1,12 @@
 import fs from "fs";
 import path from "path";
 
+
+const __dirname = path.resolve();
+const dbPath = path.resolve(__dirname, "searchHistory.json");
+
+
+
 // TODO: Define a City class with name and id properties
 class City {
   name: string;
@@ -12,7 +18,7 @@ class City {
 }
 // TODO: Complete the HistoryService class
 class HistoryService {
-  private historyFilePath = path.join(__dirname, "../../data/searchHistory.json");
+  private historyFilePath = dbPath;
     // TODO: Define a read method that reads from the searchHistory.json file
   // private async read() {}
   private async read(): Promise<City[]> {
